@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tugas</title>
+    <link rel="stylesheet" href="../stylesheets/main.css" />
+  </head>
+  <body>
+    <div class="flex justify-center items-center flex-col">
+      <div class="container">
+        <h1
+          class="text-3xl font-bold text-black-500 flex justify-center items-center h-150 w-full p-3"
+        >
+          Daftar Mahasiswa Universitas Hasanuddin
+        </h1>
+        <div class="overflow-auto rounded-lg flex justify-center">
+          <table class="border-collapse mb-8">
+            <thead class="bg-red-500 border-b-2 border-black-400">
+              <tr>
+                <th
+                  class="p-3 text-sm font-semibold tracking-wide text-center text-white"
+                >
+                  Nama
+                </th>
+                <th
+                  class="p-3 text-sm font-semibold tracking-wide text-center text-white"
+                >
+                  NIM
+                </th>
+                <th
+                  class="p-3 text-sm font-semibold tracking-wide text-center text-white"
+                >
+                  Jurusan
+                </th>
+                <th
+                  class="p-3 text-sm font-semibold tracking-wide text-center text-white"
+                >
+                  Action
+                </th>
+              </tr>
+            </thead>
+            <tbody class="bg-white">
+              <% for(i=0; i < mahasiswa.length; i++) {%>
+              <tr>
+                <td class="p-3 text-sm font-medium text-gray-700">
+                  <%= mahasiswa[i].nama%>
+                </td>
+                <td class="p-3 text-sm font-medium text-gray-700">
+                  <%= mahasiswa[i].nim%>
+                </td>
+                <td class="p-3 text-sm font-medium text-gray-700">
+                  <%= mahasiswa[i].jurusan%>
+                </td>
+                <td class="p-3 text-sm font-medium text-gray-700 flex flex-row">
+                  <form action="/remove/<%=mahasiswa[i].id%>" method="get">
+                    <button
+                      class="btn border-primary border-2 text-white bg-red-600 px-2.5"
+                    >
+                      Delete
+                    </button>
+                  </form>
+                  <form action="/update/<%=mahasiswa[i].id%>" method="get">
+                    <button
+                      class="btn border-primary border-2 text-white bg-green-600 px-2"
+                    >
+                      Update
+                    </button>
+                  </form>
+                </td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+
+        </div>
+        <div class="flex justify-center">
+          <form action="/add" method="get">
+            <button
+              class="btn border-primary border-2 text-white bg-blue-600 px-2"
+            >
+              Tambah Data
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

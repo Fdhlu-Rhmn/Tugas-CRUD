@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tugas</title>
+    <link rel="stylesheet" href="../stylesheets/main.css" />
+  </head>
+  <body>
+    <div class="overflow-auto rounded-lg flex justify-center items-center m-10">
+      <div
+        class="rounded-lg flex justify-center items-center bg-slate-200 p-10"
+      >
+        <form
+          class="px-3 space-y-4 mx-auto"
+          method="post"
+          action="http://localhost:3000"
+        >
+          <div>
+            <h1
+              class="text-2xl font-bold text-black-500 text-left items-center h-150 w-full"
+            >
+              Tambahkan Data
+            </h1>
+          </div>
+          <div>
+            <label for="nama">nama:</label>
+            <input
+              class="border border-black block w-full"
+              type="text"
+              name="nama"
+            />
+          </div>
+          <div>
+            <label for="nim">nim:</label>
+            <input
+              class="border border-black block w-full"
+              type="text"
+              name="nim"
+            />
+          </div>
+          <div>
+            <label for="jurusan">jurusan:</label>
+            <input
+              class="border border-black block w-full"
+              type="text"
+              name="jurusan"
+            />
+          </div>
+          <div class="pb-10">
+            <button
+              class="btn border-primary border-2 text-white bg-black px-2 flex-auto w-full"
+              type="submit"
+            >
+              Kirim
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
